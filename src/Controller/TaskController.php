@@ -22,7 +22,7 @@ use Doctrine\ORM\EntityManagerInterface;
             return $this->json($taskRepository->findAll(),200, [], ['groups' =>
             'task:readAll']);
         }
-     
+    
 
     #[Route('/task', name: 'app_task_index', methods: 'POST')]
     public function create_task(
@@ -44,7 +44,7 @@ use Doctrine\ORM\EntityManagerInterface;
         $task->setNameTask($data['name_task']);
         $task->setContentTask($data['content_task']);
         $task->setDateTask(new \DateTimeImmutable);
-        $task->setUserId($user);
+        $task->setUserId78+-1+($user);
         $task->setCatId($cat);
         //On fait persister les données
         $em->persist($task);
