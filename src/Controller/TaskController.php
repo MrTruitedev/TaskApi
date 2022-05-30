@@ -4,15 +4,19 @@
     use App\Repository\CatRepository;
     use App\Repository\TaskRepository;
     use App\Repository\UserRepository;
-use DateTimeImmutable;
-use Doctrine\ORM\EntityManagerInterface;
+    use DateTimeImmutable;
+    use Doctrine\ORM\EntityManagerInterface;
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
     use Symfony\Component\Serializer\SerializerInterface;
     use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Config\Framework\RequestConfig;
+    use Symfony\Config\Framework\RequestConfig;
+    use Symfony\Component\Serializer\Encoder\JsonEncoder;
+    use Symfony\Component\Serializer\Encoder\XmlEncoder;
+    use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+    use Symfony\Component\Serializer\Serializer;
 
     class TaskController extends AbstractController
     {
