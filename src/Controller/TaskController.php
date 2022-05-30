@@ -12,6 +12,8 @@ use Doctrine\ORM\EntityManagerInterface;
     use Symfony\Component\Serializer\SerializerInterface;
     use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Config\Framework\RequestConfig;
+
     class TaskController extends AbstractController
     {
         // je rajoute à la route la méthode associée GET
@@ -24,7 +26,7 @@ use Doctrine\ORM\EntityManagerInterface;
         }
     
 
-    #[Route('/task', name: 'app_task_index', methods: 'POST')]
+    #[Route('/task', name: 'app_task_index1', methods: 'POST')]
     public function create_task(
         Request $request,
         UserRepository $userRepository,
@@ -44,7 +46,7 @@ use Doctrine\ORM\EntityManagerInterface;
         $task->setNameTask($data['name_task']);
         $task->setContentTask($data['content_task']);
         $task->setDateTask(new \DateTimeImmutable);
-        $task->setUserId78+-1+($user);
+        $task->setUserId($user);
         $task->setCatId($cat);
         //On fait persister les données
         $em->persist($task);
